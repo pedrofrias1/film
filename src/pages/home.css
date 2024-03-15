@@ -1,0 +1,9 @@
+.home{
+    background-color: rgb(0, 0, 0);
+}
+.iniciar-secion{
+    text-decoration: none;
+    border-radius: 16px;
+    background-color: rgb(116, 62, 113);
+    padding: 15px 20px;
+}
