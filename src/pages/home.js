@@ -1,6 +1,5 @@
-// import Header from "../components/header/header";
+import Popular from "../components/popular/popular";
 import Nav from "../components/nav/nav";
-import Pelis from "../components/peliculas/pelis";
 import "./home.css"
 
 import  {useState, useEffect } from "react"
@@ -8,9 +7,21 @@ import  {useState, useEffect } from "react"
 
 function Home(params) {
 
+// peliculas destacadas
  const [pelis, setPelis]=useState([]);
- console.log(pelis);
 
+// peliculas populares
+ const [populares, setPopulares]=useState([]);
+
+//  console.log(pelis);
+
+
+ 
+
+
+
+
+// peliculas Destacadas
 
 const peliculas=async()=>{
     // llamo a la api de peliculas TMDB
@@ -22,8 +33,15 @@ const peliculas=async()=>{
     return dato;
 }
 
+const videos=async()=>{
+    let video= await fetch('https://api.themoviedb.org/3/movie/movie_id/videos?api_key=9218900d22d6ef6707ba1f31407cccbe&language=en-US')
+                     .then(res=>res.json())
+                     .then(json=>console.log(json))
+                     .catch(err=>console.log('error: ' + err))
+                     return video
+}
 
-// guardo los datos en const pelis.
+// guardo los datos en const pelis destacadas.
 useEffect(()=>{
     let guardarPelis=async()=>{
         let info=await peliculas()
@@ -31,26 +49,31 @@ useEffect(()=>{
         let infoPeli=info.results;
         
         setPelis(infoPeli)
+        videos()
        
     }
     guardarPelis()
 },[])
 
+
+
+
+
   
     return(
         <div className="container-fluid home">
             <Nav />
-            {/* <Header /> */}
+            <h3>Destacados Hoy</h3>
+            <header className="d-flex gap-2 scroller loaded container">
+                {pelis.length>0?
+                    pelis.map((peli)=>{
+                    return <Popular key={peli.id} data={peli} />
+                }):""}
+            </header>
             
             <main>
                 <section className="d-flex">
-                    <div className="d-flex flex-column">
-                      {
-                        pelis.map((peli)=>{
-                            return <Pelis key={peli.id} data={peli} />
-                        })
-                      }
-                    </div>
+                   <h3>Películas Populares</h3>
                     
                     
                 </section>

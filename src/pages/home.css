@@ -1,9 +1,21 @@
 .home{
     background-color: rgb(0, 0, 0);
 }
+header{
+    width: fit-content;
+}
 .iniciar-secion{
     text-decoration: none;
     border-radius: 16px;
     background-color: rgb(116, 62, 113);
     padding: 15px 20px;
+}
+.loaded{
+    min-height: 0;
+    height: auto;
+}
+.scroller{
+    width: 100%;
+    max-width: 1300px;
+    overflow-y: hidden;
 }
