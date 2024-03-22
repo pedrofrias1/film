@@ -1,37 +1,33 @@
 import { useState } from "react";
 import "./popular.css"
-import Info from "../infoPelis/info";
+import InfoPeli from "../infoPelis/infoPelis";
 
 
 function Popular({data}) {
-    const popular=async()=>{
-        let popu=await  fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1')
-        .then(res => res.json())
-        .then(json => console.log(json))
-        .catch(err => console.error('error:' + err));
-        return popu;
-      }
-      popular()
 
-
+// console.log(data.title);
+// console.log(data);
    
     const [show, setShow]=useState(false);
 
+
     const mostrar=()=>{
         setShow(true)
-        console.log(show);
+       
     }
-   
+    
+    
 
     return(
         <div className="container-fluid d-flex w-100 align-items-center">
-            <div className="column-content scroller loaded" onClick={mostrar}>
+            <div className="column-content d-flex scroller loaded" >
             <div className="d-flex flex-column">
-                <img src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} alt="img-portada" className="portada" />
+                <img src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} alt="img-portada" className={`${show?"d-none":"d-block"}`} id="portada" onClick={mostrar}/>
             </div>
 
-            <div>
-                {show===true?<Info titulo={data.title}  descripcion={data.overview} />:''}
+
+            <div className={`${show?"d-flex":"d-none"}`} id="contendor-info">
+                {show===true?<InfoPeli titulo={data.title}  descripcion={data.overview} poster={data.backdrop_path} setShow={setShow} />:''}
             </div>
                  
 

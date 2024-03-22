@@ -19,3 +19,9 @@ header{
     max-width: 1300px;
     overflow-y: hidden;
 }
+.series{
+    margin-top: 50px;
+}
+.color{
+    color: #ccc;
+}

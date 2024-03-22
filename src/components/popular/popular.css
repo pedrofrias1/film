@@ -1,8 +1,15 @@
-.portada{
+#portada{
     width: 30vh;    
     position: relative;
 }
-.portada:hover{
+#portada:hover{
     width: 35vh;
     transition: all 2s;
+}
+#contendor-info{
+    width: fit-content;
+    height: auto;
+    background-color: rgba(107, 67, 67, 0.4);
+    color: #fff;
+    position: relative;
 }

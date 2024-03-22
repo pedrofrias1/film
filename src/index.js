@@ -4,7 +4,7 @@ import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/home';
-// import InfoPeli from './components/infoPeli/infoPeli';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
