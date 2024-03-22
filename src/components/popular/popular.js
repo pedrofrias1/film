@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./popular.css"
-import InfoPeli from "../infoPelis/infoPelis";
+import InfoPeli from "./infoPelis/infoPelis";
 
 
 function Popular({data}) {

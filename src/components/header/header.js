@@ -1,12 +1,12 @@
 
 
 function Header ({generos}){
-console.log(generos);
+
 
 return(
-    <div>
+    <div className="container d-flex gap-2 justify-contentent-center align-items-center flex-wrap mt-4">
         {generos.map((gen)=>{
-            return <a>{gen.name} </a>
+            return <a className="filter">{gen.name} </a>
         })}
     </div>
 )

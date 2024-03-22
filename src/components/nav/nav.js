@@ -5,8 +5,6 @@ function Nav({pelis, serie}) {
 
    
 
-   
-    // filtro
     
 
     return(

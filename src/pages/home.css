@@ -22,6 +22,21 @@ header{
 .series{
     margin-top: 50px;
 }
-.color{
+.color, .titulo{
     color: #ccc;
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 0.2px;
+    font-weight: 600;
+}
+.filter{
+    background-color: gold;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 18px;
+    width: 20vh;
+    text-align: center;
+
 }

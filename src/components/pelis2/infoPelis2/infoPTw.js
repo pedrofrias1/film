@@ -1,8 +1,8 @@
 
-import "./infoPeli.css"
 
 
-function InfoPeli({titulo,descripcion,poster,setShow}){
+
+function InfoPeli2({titulo,descripcion,poster,setShow}){
 
 
     return(
@@ -15,5 +15,7 @@ function InfoPeli({titulo,descripcion,poster,setShow}){
            
         </div>
     )
+
+    
 }
-export default InfoPeli
+export default InfoPeli2
