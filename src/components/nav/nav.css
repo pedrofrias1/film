@@ -1,0 +1,18 @@
+nav{
+    color: white;
+    background-color: black;
+}
+.boton-inicio{
+    border-radius: 16px;
+    background-color: rgb(90, 62, 116);
+    padding: 15px 10px;
+}
+.boton-inicio , .boton-registro{
+    color: white;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.md-span{
+    color: gold;
+}
