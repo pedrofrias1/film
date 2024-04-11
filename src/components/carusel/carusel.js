@@ -1,13 +1,12 @@
 import { Fragment , useEffect, useState} from "react"
-import Cards from "../../components/cards/cards";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import "./homeCard.css"
+import "./carusel.css"
 
 function Carrusel(){
 
-    // scroll
+    // Componente del carrusel
     const settings = {
         dots: true,
         infinite: true,
@@ -19,19 +18,16 @@ function Carrusel(){
       };
 
     const [pelis, setPelis]=useState([]);
-console.log(pelis);
-    // const [img, setImg]=useState([]);
+
 
     // peliculas Destacadas
 
-const peliculas=async()=>{
+    const peliculas=async()=>{
     // llamo a la api de peliculas TMDB
     let dato=await fetch('https://api.themoviedb.org/3/discover/movie?api_key=9218900d22d6ef6707ba1f31407cccbe')
     // lo paso a JSON.
     .then(res=>res.json())
     .catch(err=>console.log('error:' + err))
-   
-    
     return dato;
 }
 
@@ -42,40 +38,31 @@ useEffect(()=>{
         
         let infoPeli=info.results;
         
-        // let imagen=infoPeli.map((items)=>{
-        //    return items.
-        // })
-        
-        
-        // setImg(imagen)
-        
         setPelis(infoPeli)
        
     }
     guardarPelis()
 },[])
 
-const Slide=()=>{
-    
-}
 
 
-// Componente del carrusel
+
+
 
 
     return(
         <Fragment>
            <Slider {...settings}>
             {pelis.map((peli)=>{
-            return<div className="main-container">
-                    <div className="slider-container">
-                        
-                            <img src={`https://image.tmdb.org/t/p/w500${peli.poster_path}`} alt="img" className="container-images"/>
-                                <h1>{peli.title}</h1>
-                       
-
-                    </div>
-                    
+            return<div className="conteiner-fluid contCarusell" key={peli.id}>
+                    <div className="list">
+                        <div className="item">
+                           <img src={`https://image.tmdb.org/t/p/w500${peli.poster_path}`} alt="carusell" id="carusell"  />
+                           <div className="content">
+                                <h1 className="title">{peli.title}</h1>
+                            </div>  
+                        </div>
+                    </div> 
                   </div>
             
         })}

@@ -1,0 +1,23 @@
+.contCarusell ,.list, .item{
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+.carusel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.contCarusell .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #000400;
+}

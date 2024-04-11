@@ -1,0 +1,27 @@
+.carctGeneral{
+    width: 100%;
+    height: 98%;
+    border-radius: 18px;
+    position: absolute;
+    background-color: rgba(110, 94, 4, 0.943);
+}
+.cardInfo{
+    margin-left: 0;
+}
+ul{
+    list-style: none;
+}
+.cardInfo:hover{
+    background-color: aliceblue;
+}
+.caracteristicas span{
+    font-size: 1.1rem;
+    width: 280px;
+    padding-left: 0 !important;
+    transform: rotateY(-50%);
+    color: #fff;
+    font-weight: 800;
+    text-shadow: 0 5px 10px #000400;
+    
+}
+
