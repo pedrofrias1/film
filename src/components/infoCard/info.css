@@ -8,20 +8,47 @@
 .cardInfo{
     margin-left: 0;
 }
+.carctGeneral{
+    height: max-content;
+    bottom: 0 ;
+}
 ul{
     list-style: none;
 }
-.cardInfo:hover{
-    background-color: aliceblue;
-}
+
 .caracteristicas span{
     font-size: 1.1rem;
-    width: 280px;
+    width: fit-content;
     padding-left: 0 !important;
-    transform: rotateY(-50%);
+
+    /* transform: rotateY(-50%); */
     color: #fff;
     font-weight: 800;
     text-shadow: 0 5px 10px #000400;
-    
 }
 
+.slide-top {
+	-webkit-animation: slide-top 0.5s cubic-bezier(0.50, 0.60, 0.50, 0.40) both;
+	        animation: slide-top 0.5s cubic-bezier(0.50, 0.60, 0.50, 0.40) both;
+}
+ @-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+    }
+  }
+  @keyframes slide-top{
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-25px);
+              transform: translateY(-25px);
+    }
+  }
+  

@@ -22,6 +22,7 @@ img{
 .info{
     position: relative;
 } 
+
 .info > .InfoCard {
     position: absolute;
     top: 100%; /* or any other desired position */
@@ -32,3 +33,4 @@ img{
 .info:hover > .InfoCard {
     display: block;
 }
+
