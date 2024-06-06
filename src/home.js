@@ -11,12 +11,15 @@ import Cards from "./components/cards/cards";
         
     const [pelis, setPelis] = useState([]);
 
+    const [search, setSearch]=useState('');
+    const [result, setResult]=useState([])
+
 
     const ObtenerPelis=async()=>{
 
         const apiKey = '9218900d22d6ef6707ba1f31407cccbe';
         
-        let response = fetch(`https://api.themoviedb.org/3/discover/movie?&include_video=true&language=en-US&page=1&sort_by=popularity.desc&api_key=${apiKey}`)
+        let response = fetch(`https://api.themoviedb.org/3/discover/movie?&include_video=true&language=en-US&page=5&sort_by=popularity.desc&api_key=${apiKey}`)
                         .then(res=>res.json())
                         .catch(err=>console.log("error: " + err ))
         return response
@@ -36,6 +39,23 @@ useEffect(()=>{
 },[])
 
 
+const searcher=(e)=>{
+  const term = e.target.value;
+  setSearch(term);
+
+}
+
+let results=[];
+
+
+if (!results) {
+  results=pelis; 
+  
+}else{
+ results= pelis.filter(dato=>
+  dato.title.toLowerCase().includes(search)
+);
+}
        
 
      
@@ -43,15 +63,18 @@ useEffect(()=>{
     
 return(
     <Fragment>
-        <Nav/>
-        <header className="container carusel">
-            <Carusel/>
+        <Nav datas={pelis} searcher={searcher} search={search} />
+        <header className="carusell">
+         
+             <Carusel/>
+         
+           
         </header>
         <main>
            
           <section className="row pt-4 card-section justify-content-center align-items-center">
           {pelis.length>0?
-            pelis.map((peli)=>{
+            results.map((peli)=>{
                 return <Cards data={peli}/>
             }):""}
           </section>

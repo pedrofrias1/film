@@ -9,14 +9,18 @@ header{
 .card-section{
     display: grid;
     grid-template-columns: repeat(4,250px);
-    grid-template-rows: repeat(2,250px);
+    grid-template-rows: repeat(2,280px);
     /* background-color: red; */
 }
-.carusel{
+.carusell{
+    margin-left: 70vh;
+  
+}
+/* .carusel{
     overflow: hidden;
     margin-top: -50;
     position: relative;
     width: 100%;
     height: 70vh;
-}
+} */
 

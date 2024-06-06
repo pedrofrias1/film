@@ -54,15 +54,13 @@ useEffect(()=>{
         <Fragment>
            <Slider {...settings}>
             {pelis.map((peli)=>{
-            return<div className="conteiner-fluid contCarusell" key={peli.id}>
-                    <div className="list">
+            return<div className="carusel" key={peli.id}>
                         <div className="item">
-                           <img src={`https://image.tmdb.org/t/p/w500${peli.poster_path}`} alt="carusell" id="carusell"  />
+                           <img src={`https://image.tmdb.org/t/p/w500${peli.poster_path}`} alt="carusell" id="carusell" className="img-carusell" />
                            <div className="content">
                                 <h1 className="title">{peli.title}</h1>
                             </div>  
                         </div>
-                    </div> 
                   </div>
             
         })}
